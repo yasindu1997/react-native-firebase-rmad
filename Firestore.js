@@ -6,7 +6,7 @@ export default function Firestore() {
 
     const addData = () => {
         firestore()
-            .collection('Users')
+            .collection('rmad_students')
             .add({
                 address: "colombo",
                 email: "nipun@gmail.com",
@@ -18,12 +18,23 @@ export default function Firestore() {
             });
     }
 
+    const getData = () => {
+        firestore().collection('rmad_students').get().then((res) => {
+            console.log(res.docs);
+        });
+    }
+
     return (
         <View>
             <Text>Firestore</Text>
             <Button
                 title='Save Data'
                 onPress={addData}
+            />
+            <Button
+                title='Get Data'
+                onPress={getData}
+                color={"red"}
             />
         </View>
     )
