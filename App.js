@@ -2,6 +2,11 @@ import { View, Text, Button, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import auth from '@react-native-firebase/auth';
 import { TextInput } from 'react-native-paper';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+
+GoogleSignin.configure({
+  webClientId: '44150495231-fqi0niphjibstsljbf964hn4obi012bd.apps.googleusercontent.com',
+});
 
 export default function App() {
 
@@ -52,6 +57,19 @@ export default function App() {
 
   }
 
+  const googleSignIn = async () => {
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
+
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+    // Sign-in the user with the credential
+    auth().signInWithCredential(googleCredential).then((res) => {
+      console.log(res);
+    });
+  }
+
   return (
     <View>
       <Text style={{ marginBottom: 25, fontSize: 20, marginLeft: 30 }}>React Native - Firebase Demo</Text>
@@ -90,6 +108,11 @@ export default function App() {
         title='Login'
         color={'green'}
         onPress={login}
+      />
+      <Button
+        title='Countinue with Google'
+        color={'yellow'}
+        onPress={googleSignIn}
       />
     </View>
   )

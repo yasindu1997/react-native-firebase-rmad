@@ -1256,6 +1256,11 @@
   "resolved" "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-14.5.0.tgz"
   "version" "14.5.0"
 
+"@react-native-google-signin/google-signin@^7.1.0":
+  "integrity" "sha512-F8eaK4hATG/r+YSObKK15eFbJ2dZsf/fEL8+7T7iL4kDM4+oUJ43qUYv6fbvdsR29aRHaHcezVrfLVIY1Gswiw=="
+  "resolved" "https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-7.1.0.tgz"
+  "version" "7.1.0"
+
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
   "resolved" "https://registry.npmjs.org/@react-native/assets/-/assets-1.0.0.tgz"
