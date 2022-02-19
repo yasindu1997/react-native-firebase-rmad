@@ -1,19 +1,25 @@
-import { View, Text, Button } from 'react-native'
-import React from 'react'
+import { View, Text, Button, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
 import auth from '@react-native-firebase/auth';
+import { TextInput } from 'react-native-paper';
 
 export default function App() {
 
+  const [email, setEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+
   const register = async () => {
     await auth()
-      .createUserWithEmailAndPassword('yasindusathsara@gmail.com', 'SuperSecretPassword!')
+      .createUserWithEmailAndPassword(email, password)
       .then(async () => {
         await auth().currentUser.updateProfile({
-          displayName: 'yasindu1997',
-          phoneNumber: '+94775067538',
-          photoURL:'http://example.com/'
+          displayName: userName,
+          phoneNumber: phone,
         })
         console.log('User account created & signed in!');
+        clear();
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
@@ -38,12 +44,46 @@ export default function App() {
       })
   }
 
+  const clear = () => {
+    setEmail('');
+    setUserName('');
+    setPhone('');
+    setPassword('');
+
+  }
+
   return (
     <View>
-      <Text>App</Text>
+      <Text style={{ marginBottom: 25, fontSize: 20, marginLeft: 30 }}>React Native - Firebase Demo</Text>
+      <TextInput
+        label="Email"
+        value={email}
+        onChangeText={text => setEmail(text)}
+      />
+
+      <TextInput
+        label="User Name"
+        value={userName}
+        style={styles.textInput}
+        onChangeText={text => setUserName(text)}
+      />
+      <TextInput
+        label="Phone No"
+        value={phone}
+        style={styles.textInput}
+        onChangeText={text => setPhone(text)}
+      />
+      <TextInput
+        label="Password"
+        value={password}
+        secureTextEntry={true}
+        style={{ marginBottom: 20, marginTop: 10 }}
+        onChangeText={text => setPassword(text)}
+      />
       <Button
         title='Register'
         color={'red'}
+        style={styles.textInput}
         onPress={register}
       />
       <Button
@@ -54,3 +94,9 @@ export default function App() {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  textInput: {
+    marginTop: 10
+  }
+})
