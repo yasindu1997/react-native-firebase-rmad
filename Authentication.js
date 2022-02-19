@@ -72,7 +72,7 @@ export default function Authentication() {
 
     return (
         <View>
-            <Text style={{ marginBottom: 25, fontSize: 20, marginLeft: 30 }}>React Native - Firebase Demo</Text>
+            <Text style={{ marginBottom: 25, fontSize: 20, marginLeft: 30 }}>React Native - Firebase Demo (Authentication)</Text>
             <TextInput
                 label="Email"
                 value={email}

@@ -24,9 +24,17 @@ export default function Firestore() {
         });
     }
 
+    const deleteData = () => {
+
+    }
+
+    const UpdateData = () => {
+
+    }
+
     return (
         <View>
-            <Text>Firestore</Text>
+            <Text style={{ marginBottom: 25, fontSize: 20, marginLeft: 30 }}>React Native - Firebase Demo (Firestore)</Text>
             <Button
                 title='Save Data'
                 onPress={addData}
