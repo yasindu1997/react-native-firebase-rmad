@@ -2,7 +2,7 @@ import { View, Text, Button, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import auth from '@react-native-firebase/auth';
 import { TextInput } from 'react-native-paper';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 
 GoogleSignin.configure({
   webClientId: '44150495231-fqi0niphjibstsljbf964hn4obi012bd.apps.googleusercontent.com',
@@ -109,9 +109,11 @@ export default function App() {
         color={'green'}
         onPress={login}
       />
-      <Button
-        title='Countinue with Google'
-        color={'yellow'}
+
+      <GoogleSigninButton
+        style={{ width: 192, height: 55 }}
+        size={GoogleSigninButton.Size.Wide}
+        color={GoogleSigninButton.Color.Dark}
         onPress={googleSignIn}
       />
     </View>
