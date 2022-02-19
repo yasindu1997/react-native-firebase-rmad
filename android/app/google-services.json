@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "44150495231",
+    "project_id": "rmad--01",
+    "storage_bucket": "rmad--01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44150495231:android:8107074b37e64b2bf239ca",
+        "android_client_info": {
+          "package_name": "com.rmadfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44150495231-8tg3bmbriqa329cclm882r3tm89qf4ie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rmadfirebase",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "44150495231-fqi0niphjibstsljbf964hn4obi012bd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC97KhlYTk_kXG-OIQet8ylwlb4BxF6gbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44150495231-fqi0niphjibstsljbf964hn4obi012bd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
