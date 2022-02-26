@@ -15,6 +15,8 @@ export default function Firestore() {
             })
             .then(() => {
                 console.log('User added!');
+            }).catch((err)=>{
+                console.log(err);
             });
     }
 
