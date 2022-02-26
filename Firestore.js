@@ -62,7 +62,7 @@ export default function Firestore() {
                 color={"red"}
             />
 
-            <Text>{name}</Text>
+            <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 25, marginLeft: 25 }}>Real time name : {name}</Text>
         </View>
     )
 }
