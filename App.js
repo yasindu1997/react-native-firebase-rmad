@@ -6,6 +6,6 @@ import LoadAll from './LoadAll'
 
 export default function App() {
   return (
-    <LoadAll />
+    <Firestore />
   )
 }

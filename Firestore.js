@@ -1,8 +1,22 @@
-import { View, Text, Button } from 'react-native'
-import React from 'react'
+import { View, Text, Button, Alert } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import firestore from '@react-native-firebase/firestore';
 
 export default function Firestore() {
+
+    const [name, setName] = useState('');
+
+    useEffect(() => {
+        const subscriber = firestore()
+            .collection('rmad_students')
+            .doc('KDkkjOWLQfjzQvh0F3Ir')
+            .onSnapshot(documentSnapshot => {
+                setName(documentSnapshot.data().name)
+            });
+
+        // Stop listening for updates when no longer required
+        return () => subscriber();
+    }, []);
 
     const addData = () => {
         firestore()
@@ -15,7 +29,8 @@ export default function Firestore() {
             })
             .then(() => {
                 console.log('User added!');
-            }).catch((err)=>{
+                Alert.alert("Data Saved !", 'Student saved successfully')
+            }).catch((err) => {
                 console.log(err);
             });
     }
@@ -46,6 +61,8 @@ export default function Firestore() {
                 onPress={getData}
                 color={"red"}
             />
+
+            <Text>{name}</Text>
         </View>
     )
 }
